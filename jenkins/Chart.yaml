@@ -1,0 +1,10 @@
+apiVersion: v2
+name: jenkins-umbrella
+description: Umbrella chart for jenkins
+type: application
+version: 0.1.0
+
+dependencies:
+  - name: jenkins
+    version: v2.13.3
+    repository: "file://charts/jenkins"
