@@ -1,3 +1,7 @@
 jenkins:
   controller:
     serviceType: LoadBalancer
+
+  serviceAccount:
+    create: false
+    name: jenkins-argo-bootstrap
