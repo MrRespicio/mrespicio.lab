@@ -1,0 +1,10 @@
+apiVersion: v2
+name: rancher-umbrella
+description: Umbrella chart for rancher
+type: application
+version: 0.1.0
+
+dependencies:
+  - name: rancher
+    version: v2.13.3
+    repository: "file://charts/rancher"
