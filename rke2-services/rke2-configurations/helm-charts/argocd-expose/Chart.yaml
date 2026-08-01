@@ -1,0 +1,5 @@
+apiVersion: v2
+name: argocd-exposure
+description: Expose Argo CD through Istio Gateway
+type: application
+version: 0.1.0

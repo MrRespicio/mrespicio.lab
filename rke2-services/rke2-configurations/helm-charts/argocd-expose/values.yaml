@@ -1,0 +1,5 @@
+host: argocd.lab.local
+
+gateway:
+  namespace: argocd
+  name: argocd-gateway
