@@ -1,0 +1,23 @@
+metallb:
+  pools:
+    - name: rke2-services
+
+      # Modify the address range according to your environment:
+      # - Must be on the same Layer 2 network as the Kubernetes nodes
+      # - Must not overlap with the DHCP scope
+      # - Must not be assigned to routers, servers, printers, or other devices
+      # - Must be reachable by clients on the network
+      #
+      # Example:
+      # 172.16.155.200-172.16.155.220
+
+      addresses:
+        - 172.16.155.200-172.16.155.220
+
+  # Chart supports multiple IP pools.
+  #
+  # Example:
+  #
+  # - name: dmz-services
+  #   addresses:
+  #     - 172.16.156.200-172.16.156.220

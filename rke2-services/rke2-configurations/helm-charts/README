@@ -1,0 +1,3 @@
+1. Install metallb-bootstrap
+2. Install metallb-config
+3. Install argocd-bootstrap

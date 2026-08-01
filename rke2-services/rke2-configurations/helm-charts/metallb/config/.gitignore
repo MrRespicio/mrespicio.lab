@@ -1,0 +1,12 @@
+# Helm dependencies
+charts/
+
+# Mac
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Temporary files
+*.swp

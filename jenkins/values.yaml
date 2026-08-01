@@ -1,4 +1,0 @@
-jenkins:
-  controller:
-    serviceType: LoadBalancer
-

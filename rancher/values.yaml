@@ -1,6 +1,0 @@
-rancher:
-# Fully qualified name to reach your Rancher server
-  hostname: rancher.mrespicio.lab
-  service:
-    type: LoadBalancer
-
