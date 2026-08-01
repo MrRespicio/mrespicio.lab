@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/MrRespicio/mrespicio.lab.git
     targetRevision: main
-    path: rke2-configurations/helm-charts/argocd-expose
+    path: rke2-services/rke2-configurations/helm-charts/istio/base
     helm:
       valueFiles:
         - values.yaml
@@ -22,3 +22,10 @@ spec:
     automated:
       prune: true
       selfHeal: true
+
+  ignoreDifferences:
+    - group: admissionregistration.k8s.io
+      kind: ValidatingWebhookConfiguration
+      name: istio-validator-istio-system
+      jsonPointers:
+        - /webhooks/0/failurePolicy
