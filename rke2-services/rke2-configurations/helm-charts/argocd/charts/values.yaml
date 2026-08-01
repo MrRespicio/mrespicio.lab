@@ -1,1 +1,12 @@
-argo-cd: {}
+argo-cd:
+  configs:
+
+    cm:
+      url: http://argocd.lab.local
+
+      resource.customizations.ignoreDifferences.admissionregistration.k8s.io_ValidatingWebhookConfiguration: |
+        jqPathExpressions:
+        - '.webhooks[]?.failurePolicy'
+
+    params:
+      server.insecure: true
