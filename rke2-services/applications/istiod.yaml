@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: istiod
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/MrRespicio/mrespicio.lab.git
+    path: rke2-services/rke2-configurations/helm-charts/istio/istiod
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+        - values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: istio-system
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
+      enabled: true
+
+  ignoreDifferences:
+    - group: admissionregistration.k8s.io
+      kind: ValidatingWebhookConfiguration
+      name: istiod-default-validator
+      jqPathExpressions:
+        - '.webhooks[]?.failurePolicy'
