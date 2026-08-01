@@ -1,24 +1,26 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argocd-expose
-  namespace: argocd
+  name: kiali
+  namespace: kiali-operator
 spec:
   project: default
 
   source:
     repoURL: https://github.com/MrRespicio/mrespicio.lab.git
     targetRevision: main
-    path: rke2-services/manifests/helm-charts/argocd-expose
+    path: rke2-services/manifests/helm-charts/kiali
     helm:
       valueFiles:
         - values.yaml
 
   destination:
     server: https://kubernetes.default.svc
-    namespace: argocd
+    namespace: kiali-operator
 
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

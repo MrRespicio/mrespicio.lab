@@ -1,0 +1,10 @@
+apiVersion: v2
+name: kiali
+description: Kiali bootstrap components
+type: application
+version: 0.1.0
+
+dependencies:
+  - name: kiali-operator
+    version: 2.17.0
+    repository: https://kiali.org/helm-charts
