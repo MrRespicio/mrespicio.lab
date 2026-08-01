@@ -10,3 +10,4 @@ argo-cd:
 
     params:
       server.insecure: true
+      application.namespaces: "*"
